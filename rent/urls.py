@@ -3,7 +3,7 @@ from rest_framework import routers
 from rent import views
 
 router = routers.DefaultRouter()
-router.register(r'rent', views.RentViewSet)
+router.register(r'equipment', views.RentViewSet)
 
 urlpatterns = patterns('', 
 						url(r'^api/', include(router.urls)),

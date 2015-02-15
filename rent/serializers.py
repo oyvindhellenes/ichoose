@@ -3,7 +3,7 @@ from rent.models import Equipment
 from django.contrib.auth.models import User
 
 class RentSerializer(serializers.HyperlinkedModelSerializer):
-	class meta:
+	class Meta:
 		model = Equipment
-		fields = ('type')
+		fields = ('type', 'description', 'location')
 		

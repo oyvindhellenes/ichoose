@@ -3,14 +3,14 @@ from django.shortcuts import render_to_response
 from serializers import RentSerializer
 from permissions import IsOwnerReadOnly
 from rest_framework import viewsets
-from models import Reservation
+from models import Equipment
 
 class RentViewSet(viewsets.ModelViewSet):
 
-	queryset = Reservation.objects.all()
+	queryset = Equipment.objects.all()
 	serializer_class = RentSerializer
-	permission_classes = (IsOwnerReadOnly,)
+#	permission_classes = (IsOwnerReadOnly,)
 
-	def pre_save(self, obj):
-		obj.owner = self.request.user
+#	def pre_save(self, obj):
+#		obj.owner = self.request.user
 
